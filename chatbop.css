@@ -16,7 +16,7 @@ h1 {
 }
 
 .welcomeText {
-  font-family: Oswald;
+  font-family: avenir;
   text-align: center;
   margin-top: 32vh;
 }
@@ -31,7 +31,7 @@ h1 {
 }
 
 .header {
-  font-family: Oswald, sans-serif;
+  font-family: avenir;
   font-weight: 400;
   color: #000000;
   background-color: #3d2555;
@@ -50,7 +50,7 @@ h1 {
 
 .login {
   color: #545454;
-  font-family: Oswald;
+  font-family: avenir;
   float: right;
   display: inline-block;
 }
@@ -74,7 +74,7 @@ h1 {
 }
 
 .chatListTitle {
-  font-family: Oswald, sans-serif;
+  font-family: avenir;
   font-size: 20px;
   text-align: center;
   color: #545454;
@@ -190,7 +190,7 @@ h1 {
   width: calc(100% - 285px);
   margin-left: 285px;
   margin-top: 32vh;
-  font-family: Oswald;
+  font-family: avenir;
   text-align: center;
   line-height: 20px;
 }
@@ -324,7 +324,7 @@ ul {
 
 .sendButton {
   float: right;
-  font-family: Oswald, sans-serif;
+  font-family: avenir;
   margin-top: 10px;
   border: none;
   color: #FFF;
