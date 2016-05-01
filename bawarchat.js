@@ -335,7 +335,7 @@ if (Meteor.isClient) {
     messageDate: function () {
       return formatDate(this.createdAt);
     },
-    // Makes the user's name green, and the chat partner's name grey.
+    // Makes the user's name blue, and the chat partner's name purple.
     messageUserColor: function () {
       if (Meteor.user().username == this.from) {
         return "#19bcb9";
