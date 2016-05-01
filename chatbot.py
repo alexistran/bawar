@@ -16,19 +16,27 @@ try:
             word TEXT UNIQUE
         )
     ''')
+
     # create the table containing the sentences
     cursor.execute('''
         CREATE TABLE sentences (
             sentence TEXT UNIQUE,
             used INT NOT NULL DEFAULT 0
         )''')
+
     # create association between weighted words and the next sentence
     cursor.execute('''
         CREATE TABLE associations (
-            word_id INT NOT NULL,
-            sentence_id INT NOT NULL,
-            weight REAL NOT NULL)
+            word TEXT,
+            response TEXT)
     ''')
+
+    cursor.execute("INSERT INTO associations (word) \
+        VALUES ('support', 'Here is the support 24 hr support hot line number: ### ####')")
+    cursor.execute("INSERT INTO associations (word) \
+        VALUES ('help', 'hi')")
+
+
 except:
     pass
  
@@ -56,7 +64,7 @@ def get_words(text):
     return Counter(wordsList).items()
  
  
-B = 'Hello!'
+B = 'We guarantee confidentiality' + '\n' + 'How may I help you today?' 
 while True:
     # output bot's message
     print('B: ' + B)
