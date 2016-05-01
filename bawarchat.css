@@ -15,6 +15,13 @@ h1 {
   font-size: 20px;
 }
 
+.floater {
+  position: fixed;
+  z-index: 10000;
+  right: 0px;
+  bottom: 750px;
+}
+
 .welcomeText {
   font-family: 'Arial';
   text-align: center;
@@ -61,6 +68,7 @@ h1 {
   color: #545454;
   position: absolute;
   z-index: 10;
+  padding-bottom: 50px;
   height: calc(100vh - 180px);
 }
 
