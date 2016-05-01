@@ -15,6 +15,13 @@ h1 {
   font-size: 20px;
 }
 
+.floater {
+  position: fixed;
+  z-index: 10000;
+  right: 0px;
+  bottom: 750px;
+}
+
 .welcomeText {
   font-family: avenir;
   text-align: center;
@@ -341,8 +348,6 @@ ul {
   margin-top: 10px;
   margin-right: 10px;
   position: relative;
-  background-color: #a373b3;
-
 }
 
 .sendButton {
