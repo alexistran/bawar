@@ -1,5 +1,5 @@
 body {
-  font-family: avenir;
+  font-family: verdana;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -9,29 +9,21 @@ body {
 }
 
 h1 {
-  font-family: avenir;
+  font-family: Arial;
   font-weight: normal;
   line-height: 5px;
   font-size: 20px;
 }
 
-.floater {
-  position: fixed;
-  z-index: 10000;
-  right: 0px;
-  bottom: 750px;
-}
-
 .welcomeText {
-  font-family: avenir;
+  font-family: 'Arial';
   text-align: center;
   margin-top: 32vh;
-  background-image: url("http://www.bawar.org/wp-content/uploads/2011/12/fullscreen-flower.jpg");
-
 }
 
 .welcome {
   font-size: 40px;
+  padding-top: 50px;
 }
 
 .pleaseSignIn {
@@ -40,31 +32,17 @@ h1 {
 }
 
 .header {
-  font-family: avenir;
+  font-family: Arial;
   font-weight: 400;
   color: #000000;
-  /*background-color: #3d2555;*/
+  background-color: #3d2555;
   font-size: 25px;
   width: 100%;
   border-bottom: #eee solid 1px;
   padding-top: 5px;
   padding-bottom: 5px;
-  height: 40px;
-  /*background-image: url("http://www.bawar.org/wp-content/uploads/2013/04/fullscreen-flowerheader.jpg");*/
-  /*background-position: left top;*/
-}
-
-.image {
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  height: 40px;
-  margin-top: 0;
-  position: relative;
-  top: -32px;
-  z-index: -1;
+  height: 60px;
   background-image: url("http://www.bawar.org/wp-content/uploads/2013/04/fullscreen-flowerheader.jpg");
-
 }
 
 .pageTitle {
@@ -73,7 +51,7 @@ h1 {
 
 .login {
   color: #545454;
-  font-family: avenir;
+  font-family: Arial;
   float: right;
   display: inline-block;
 }
@@ -97,7 +75,7 @@ h1 {
 }
 
 .chatListTitle {
-  font-family: avenir;
+  font-family: Arial;
   font-size: 20px;
   text-align: center;
   color: #545454;
@@ -213,10 +191,9 @@ h1 {
   width: calc(100% - 285px);
   margin-left: 285px;
   margin-top: 32vh;
-  font-family: avenir;
+  font-family: Arial;
   text-align: center;
   line-height: 20px;
-  /*background-image: url("http://www.bawar.org/wp-content/uploads/2011/12/fullscreen-flower.jpg");*/
 }
 
 .hiUsername {
@@ -229,7 +206,7 @@ h1 {
   font-size: 20px;
   color: #545454;
   line-height: 0px;
-
+  
 }
 
 .chatLog {
@@ -319,7 +296,7 @@ ul {
 }  
 
 .scrollToBottomButton:hover {
-  background: #a373b3;
+  background: #19bcb9;
 }
 
 .scrollToBottomButton:active {
@@ -352,7 +329,7 @@ ul {
 
 .sendButton {
   float: right;
-  font-family: avenir;
+  font-family: Arial;
   margin-top: 10px;
   border: none;
   color: #FFF;
@@ -364,7 +341,7 @@ ul {
 
 
 .sendButton:hover, .scrollToBottomButton:hover {
-  background-color: #a373b3;
+  background-color: #19bcb9;
 }
 
 .sendButton:active {

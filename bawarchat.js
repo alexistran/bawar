@@ -1,14 +1,7 @@
 /* 
 
-Chat Bop v1.0 
-Author: Quang Luong
-
-This chat site is made using Meteor.js.
-Messages are stored in a big ol' collection, and are
-distributed to the right senders and receivers.
-Chat Bop supports a streamlined friend system, and detects when
-new messages are sent over. It also knows when users are online or offline,
-thanks to mizzao's user-status package.
+BAWAR Support Chat v1.0 
+Author: Quang Luong, Kim Wang, Alexis Tran, Sabrina Shie
 
 Messages are stored in a Messages collection as follows:
 {
@@ -24,19 +17,13 @@ Friend relationships are stored in a Friends collection as follows:
   requestStatus: accepted/sent/received/removed
   newMessageCount: how many unseen messages from them that you received.
 }
+Note that the friends structure is a vestige of an older system.
+
 */
 
 // Stores ALL the messages an newMessageCounts
 Messages = new Mongo.Collection("Messages");
 Friends = new Mongo.Collection("Friends");
-
-Friends.insert({
-  username: "Counselor", 
-  friendname: null, 
-  requestStatus: null, 
-  newMessageCount: 0});
-
-// Users = new Mongo.Collection("Users");
 
 // Scrolls to the bottom of the chat log.
 function scrollToBottom() {
@@ -166,7 +153,7 @@ if (Meteor.isClient) {
   var LOAD_MORE_AMOUNT = 15;
 
   // Determines which user's messages to retrieve for the chat log.
-  Session.set('currentChat', '');
+  Session.set('currentChat', 'Counselor');
 
   // Determines if the add-new-chat button was toggled or not.
   Session.set('addNewChat', false);
@@ -196,6 +183,10 @@ if (Meteor.isClient) {
   // Validity is determined by whether the partner is an accepted friend or not.
   Handlebars.registerHelper('chatOpen', function () {
     return Friends.find({username: Meteor.user().username, friendname: Session.get('currentChat'), requestStatus: 'accepted'}).count() > 0;
+  });
+
+  Handlebars.registerHelper('isCounselor', function () {
+    return Meteor.user().username == 'Counselor'
   });
 
   Template.chatListColumn.helpers({
@@ -240,10 +231,14 @@ if (Meteor.isClient) {
       return false;
     },
 
+    counselorOnline: function () {
+      return Meteor.users.find({username: 'Counselor', 'status.online': true}).count() > 0
+    },
+
     // Returns the new message count to put next to the username.
     newMessageCountText: function () {
       if (this.newMessageCount > 0) {
-        return '[' + this.newMessageCount + "] "
+        return '(' + this.newMessageCount + ") "
       }
       return '';
     },
@@ -345,7 +340,7 @@ if (Meteor.isClient) {
       if (Meteor.user().username == this.from) {
         return "#19bcb9";
       }
-      return "#545454";
+      return "#A373B3";
     }
   })
 
@@ -381,7 +376,7 @@ if (Meteor.isClient) {
           event.target.value = "";
         }
         document.getElementsByClassName("sendButton")[0].style.fontSize = "20px";
-        document.getElementsByClassName("sendButton")[0].style.backgroundColor = "#a373b3";
+        document.getElementsByClassName("sendButton")[0].style.backgroundColor = "#3FB579";
       }
     },
     // Resets the SEND button to look unpressed.
@@ -411,9 +406,9 @@ if (Meteor.isClient) {
     'scrollToBottomButtonText': function () {
       var count = Friends.findOne({username: Meteor.user().username, friendname: Session.get('currentChat')}).newMessageCount;
       if (count > 1) {
-        return '[' + count + '] New Messages ▾';
+        return '(' + count + ') New Messages ▾';
       } else if (count == 1) {
-        return '[1] New Message ▾';
+        return '(1) New Message ▾';
       } else {
         return 'Scroll to Bottom ▾';
       }
@@ -439,6 +434,12 @@ if (Meteor.isClient) {
 
   // Subscribe to Friends when you login.
   Accounts.onLogin(function () {
+    if (Meteor.user().username != 'Counselor') {
+      Meteor.call('addCounselor', Meteor.user().username);
+      Session.set('currentChat', 'Counselor');
+    } else {
+      Session.set('currentChat', '');
+    }
     Meteor.subscribe('Friends');
     Session.set('newMessageCount', getNewMessageCount());
   });
@@ -457,23 +458,15 @@ if (Meteor.isClient) {
     if (Meteor.user()) {
       var count = Friends.find({$or: [{username: Meteor.user().username, newMessageCount: {$gt: 0}}, {requestStatus: 'received'}]}).count();
       if (count > 0) {
-        document.title = "[" + count + "] Chat Bop";
+        document.title = "(" + count + ") BAWAR | Support Chat";
       } else {
-        document.title = "Chat Bop"
+        document.title = "BAWAR | Support Chat"
       }
     } else {
-      document.title = "Chat Bop | Sign-in";
+      document.title = "BAWAR | Support Chat | Sign-in";
     }
   });
 
-  // Reset the Add New Chat/Remove Chat toggles and the current chat.
-  Meteor.autorun(function () {
-    if (!Meteor.user()) {
-      Session.set('addNewChat', false);
-      Session.set('removeChat', false);
-      Session.set('currentChat', '');   
-    }
-  });
 }
 
 Meteor.methods({
@@ -516,6 +509,11 @@ Meteor.methods({
         Meteor.call('setRequestStatus', newChat, user, 'received');
       }
     }
+  },
+
+  addCounselor: function (user) {
+    Meteor.call('setRequestStatus', user, 'Counselor', 'accepted');
+    Meteor.call('setRequestStatus', 'Counselor', user, 'accepted');
   },
 
   // Removes a friend by simply setting the requestStatus to 'removed'.
