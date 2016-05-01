@@ -19,6 +19,8 @@ h1 {
   font-family: Oswald;
   text-align: center;
   margin-top: 32vh;
+  background-image: url("http://www.bawar.org/wp-content/uploads/2011/12/fullscreen-flower.jpg");
+
 }
 
 .welcome {
@@ -197,12 +199,15 @@ h1 {
 
 .hiUsername {
   font-size: 30px;
+  /*background-image: url("http://www.bawar.org/wp-content/uploads/2011/12/fullscreen-flower.jpg");*/
+
 }
 
 .belowHiText {
   font-size: 20px;
   color: #545454;
   line-height: 0px;
+  
 }
 
 .chatLog {
@@ -217,6 +222,7 @@ ul {
   margin: 0;
   padding: 0;
   background: #FFF;
+
 }
 
 .moreMessages, .noMoreMessages {
