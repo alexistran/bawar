@@ -186,7 +186,7 @@ if (Meteor.isClient) {
   });
 
   Handlebars.registerHelper('isCounselor', function () {
-    return Meteor.user().username == 'Counselor'
+    return Meteor.user().username == 'Counselor';
   });
 
   Template.chatListColumn.helpers({
@@ -271,7 +271,7 @@ if (Meteor.isClient) {
       messageLimit = DEFAULT_MESSAGE_LIMIT;
       Session.set('currentChat', this.friendname);
       bottomHeight = 0;
-      Meteor.subscribe('Messages', this.friendname, messageLimit);
+      Meteor.subscribe('Messages', this.friendname, DEFAULT_MESSAGE_LIMIT);
       focusOn('textarea');      
     },
 
@@ -437,6 +437,7 @@ if (Meteor.isClient) {
     if (Meteor.user().username != 'Counselor') {
       Meteor.call('addCounselor', Meteor.user().username);
       Session.set('currentChat', 'Counselor');
+      Meteor.subscribe('Messages', 'Counselor', DEFAULT_MESSAGE_LIMIT);
     } else {
       Session.set('currentChat', '');
     }
