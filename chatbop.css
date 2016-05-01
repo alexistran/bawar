@@ -144,7 +144,7 @@ h1 {
 }
 
 #isOnline {
-  color: #396;
+  color: #19bcb9;
 }
 
 .myRequestText, .sentRequestText {
@@ -152,7 +152,7 @@ h1 {
 }
 
 .addRequestButton {
-  color: #396;
+  color: #19bcb9;
   border: none;
   font-size: 13px;
   background: none;
@@ -166,7 +166,7 @@ h1 {
 
 .addRequestButton:hover {
   color: #FFF;
-  background-color: #396;
+  background-color: #19bcb9;
 }
 
 .usernameInput {
@@ -231,7 +231,7 @@ ul {
 
 .moreMessages:hover {
   text-decoration: underline;
-  color: #396;
+  color: #19bcb9;
 }
 
 .chatMessage {
@@ -278,7 +278,7 @@ ul {
 .scrollToBottomButton {
   display: inline;
   text-align: center;
-  background-color: #396;
+  background-color: #19bcb9;
   border: none;
   font-size: 13px;
   position: absolute;
@@ -328,7 +328,7 @@ ul {
   margin-top: 10px;
   border: none;
   color: #FFF;
-  background-color: #396;
+  background-color: #19bcb9;
   font-size: 25px;
   width: 150px;
   height: 40px;

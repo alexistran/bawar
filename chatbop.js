@@ -219,7 +219,7 @@ if (Meteor.isClient) {
     // Changes the style of a chat list element to indicate its selection.
     currentChatListStyle: function () {
       if (Session.equals('currentChat', this.friendname)) {
-        return "border-left: #3FB579 solid 15px"
+        return "border-left: #19bcb9 solid 15px"
       }
       return ""
     },
@@ -255,7 +255,7 @@ if (Meteor.isClient) {
   Template.chatListColumn.events({
     // Handle opening the add new chat box.
     'click .addNewChat': function (event) {
-      toggleChatListButtons('addNewChat', 'removeChat', '#396');
+      toggleChatListButtons('addNewChat', 'removeChat', '#19bcb9');
     },
 
     // Handle opening the remove chat box.
@@ -335,7 +335,7 @@ if (Meteor.isClient) {
     // Makes the user's name green, and the chat partner's name grey.
     messageUserColor: function () {
       if (Meteor.user().username == this.from) {
-        return "#396";
+        return "#19bcb9";
       }
       return "#545454";
     }
