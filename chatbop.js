@@ -267,7 +267,7 @@ if (Meteor.isClient) {
 
     // Handle opening the remove chat box.
     'click .removeChat': function (event) {
-      toggleChatListButtons('removeChat', 'addNewChat', '#545454');
+      toggleChatListButtons('removeChat', 'addNewChat', '#a373b3');
     },
 
     // Change the current chat partner.
