@@ -54,6 +54,14 @@ h1 {
 
 .pageTitle {
   display: inline-block;
+  position: relative;
+  left: 20px;
+  top: 15px;
+}
+
+.logo {
+  position: relative;
+  left: 15px;
 }
 
 .login {
@@ -61,6 +69,8 @@ h1 {
   font-family: Arial;
   float: right;
   display: inline-block;
+  position: relative;
+  top: 15px;
 }
 .chatListColumn {
   width: 280px;
