@@ -35,6 +35,7 @@ Friends.insert({
   friendname: null, 
   requestStatus: null, 
   newMessageCount: 0});
+
 // Users = new Mongo.Collection("Users");
 
 // Scrolls to the bottom of the chat log.
@@ -380,7 +381,7 @@ if (Meteor.isClient) {
           event.target.value = "";
         }
         document.getElementsByClassName("sendButton")[0].style.fontSize = "20px";
-        document.getElementsByClassName("sendButton")[0].style.backgroundColor = "#3FB579";
+        document.getElementsByClassName("sendButton")[0].style.backgroundColor = "#a373b3";
       }
     },
     // Resets the SEND button to look unpressed.

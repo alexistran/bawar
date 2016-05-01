@@ -12,9 +12,21 @@
 
 <body>
   <div class="header">
+    
+    <div class= "floater">
+      <a href= "http://www.google.com">
+        <img alt="panic" src="http://www.bawar.org/wp-content/uploads/2013/11/panic.png">
+      </a>
+    </div>
+
     <div class="login">{{> loginButtons align="right"}}</div>
     {{#if currentUser}}
       <div class="pageTitle" title="BAWAR Support Chat">BAWAR Support Chat ---- Anonymous and Confidential</div>
+
+      <div class = "image">
+      <!-- <img src = "http://www.bawar.org/wp-content/uploads/2013/04/fullscreen-flowerheader.jpg">  -->
+    </div>
+
     {{/if}}
   </div>
   {{#if currentUser}}

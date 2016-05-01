@@ -1,5 +1,5 @@
 body {
-  font-family: verdana;
+  font-family: avenir;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -13,6 +13,13 @@ h1 {
   font-weight: normal;
   line-height: 5px;
   font-size: 20px;
+}
+
+.floater {
+  position: fixed;
+  z-index: 10000;
+  right: 0px;
+  bottom: 750px;
 }
 
 .welcomeText {
@@ -36,14 +43,28 @@ h1 {
   font-family: avenir;
   font-weight: 400;
   color: #000000;
-  background-color: #3d2555;
+  /*background-color: #3d2555;*/
   font-size: 25px;
   width: 100%;
   border-bottom: #eee solid 1px;
   padding-top: 5px;
   padding-bottom: 5px;
   height: 40px;
+  /*background-image: url("http://www.bawar.org/wp-content/uploads/2013/04/fullscreen-flowerheader.jpg");*/
+  /*background-position: left top;*/
+}
+
+.image {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 40px;
+  margin-top: 0;
+  position: relative;
+  top: -32px;
+  z-index: -1;
   background-image: url("http://www.bawar.org/wp-content/uploads/2013/04/fullscreen-flowerheader.jpg");
+
 }
 
 .pageTitle {
@@ -195,6 +216,7 @@ h1 {
   font-family: avenir;
   text-align: center;
   line-height: 20px;
+  /*background-image: url("http://www.bawar.org/wp-content/uploads/2011/12/fullscreen-flower.jpg");*/
 }
 
 .hiUsername {
@@ -207,7 +229,7 @@ h1 {
   font-size: 20px;
   color: #545454;
   line-height: 0px;
-  
+
 }
 
 .chatLog {
@@ -297,7 +319,7 @@ ul {
 }  
 
 .scrollToBottomButton:hover {
-  background: #3FB579;
+  background: #a373b3;
 }
 
 .scrollToBottomButton:active {
@@ -342,7 +364,7 @@ ul {
 
 
 .sendButton:hover, .scrollToBottomButton:hover {
-  background-color: #3FB579;
+  background-color: #a373b3;
 }
 
 .sendButton:active {
