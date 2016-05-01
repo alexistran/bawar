@@ -30,6 +30,13 @@ Friend relationships are stored in a Friends collection as follows:
 Messages = new Mongo.Collection("Messages");
 Friends = new Mongo.Collection("Friends");
 
+Friends.insert({
+  username: "Counselor", 
+  friendname: null, 
+  requestStatus: null, 
+  newMessageCount: 0});
+// Users = new Mongo.Collection("Users");
+
 // Scrolls to the bottom of the chat log.
 function scrollToBottom() {
   var elements = document.getElementsByClassName('chatLog');
@@ -469,6 +476,7 @@ if (Meteor.isClient) {
 }
 
 Meteor.methods({
+
   // Inserts a new message to the database.
   newMessage: function (to, from, text) {
     Messages.insert({
