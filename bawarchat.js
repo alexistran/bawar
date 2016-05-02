@@ -545,3 +545,4 @@ Meteor.methods({
     Friends.update({username: user, friendname: friend}, {$set: {newMessageCount: 0}});
   }
 });
+
